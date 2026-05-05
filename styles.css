@@ -1,10 +1,8 @@
-GETreqres.in/api/users?page=2
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 * {
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
@@ -22,3 +20,120 @@ nav {
   height: 80px;
   display: flex;
 }
+
+.title {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+#prevBtn {
+    background-color: rgb(88, 128, 88);
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    width: 80px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+#prevBtn:hover {
+    background-color:rgb(102, 145, 102);
+    scale: 1.05;
+}
+
+#nextBtn {
+    background-color: rgb(88, 128, 88);
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    width: 80px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+#nextBtn:hover {
+    background-color:rgb(102, 145, 102);
+    scale: 1.05;
+}
+
+
+
+
+
+/* RECIPES */
+
+.recipe__wrapper {
+    margin: 30px 10px;
+}
+
+.recipe__title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 150px;
+}
+
+.recipe__origin {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.ingredients__wrapper {
+    background-color: beige;
+    width: 400px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+}
+
+.ingredients {
+    list-style: none;
+    line-height: 1.5;
+    background-color: beige;
+}
+
+.recipe__instructions {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px;
+    line-height: 1.5;
+    letter-spacing: 0.625px;
+    word-spacing: 0.2em;
+}
+
+.meal__img--wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.meal__img {
+    width: 100%;
+    max-width: 600px;
+}
+

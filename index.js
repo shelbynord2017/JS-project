@@ -32,7 +32,9 @@ function renderPage() {
   wrapper.innerHTML += 
     `<h3 class="recipe__title">${meal.strMeal}</h3>
         <h5 class="recipe__origin">${meal.strArea}</h5>
-        <ul class="ingredients">${ingredients}</ul>
+        <div class="ingredients__wrapper">
+            <ul class="ingredients">${ingredients}</ul>
+        </div>
         <p class="recipe__instructions">${meal.strInstructions}</p>
         <figure class="meal__img--wrapper">
             <img src=${meal.strMealThumb} class="meal__img">
