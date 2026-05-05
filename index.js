@@ -30,7 +30,9 @@ function renderPage() {
             }
         }
   wrapper.innerHTML += 
-    `<h3 class="recipe__title">${meal.strMeal}</h3>
+    `
+    <div class="recipe__wrapper">
+        <h3 class="recipe__title">${meal.strMeal}</h3>
         <h5 class="recipe__origin">${meal.strArea}</h5>
         <div class="ingredients__wrapper">
             <ul class="ingredients">${ingredients}</ul>
@@ -39,6 +41,7 @@ function renderPage() {
         <figure class="meal__img--wrapper">
             <img src=${meal.strMealThumb} class="meal__img">
         </figure>
+    </div>
     `
 })
 }
