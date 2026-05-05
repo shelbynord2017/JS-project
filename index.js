@@ -4,51 +4,56 @@
 async function main() {
 const res = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
 const data = await res.json()
-console.log(data)
-
-
-
-
-const meal = data.meals[0]
-
-
 
 
 
 const wrapper = document.querySelector(".recipe__wrapper")
-
 const pageSize = 5
 let currentPage = 1
-const start = (currentPage - 1) * pageSize
-const end = start + pageSize
-const paginatedData = data.meals.slice(start, end)
 
-paginatedData.forEach(meal => {
-    let ingredients = ""
+function renderPage() {
+    window.scrollTo(0, 0)
+    wrapper.innerHTML = ""
+    const start = (currentPage - 1) * pageSize
+    const end = start + pageSize
+    const paginatedData = data.meals.slice(start, end)
 
-    for (let i = 1; i <= 20; i++) {
-        const ingredient = meal[`strIngredient${i}`]
-        const measure = meal[`strMeasure${i}`]
 
-        if (ingredient && ingredient.trim() !== "") {
-            ingredients += `<li>${ingredient} - ${measure}</li>`
+    paginatedData.forEach(meal => {
+        let ingredients = ""
+        for (let i = 1; i <= 20; i++) {
+            const ingredient = meal[`strIngredient${i}`]
+            const measure = meal[`strMeasure${i}`]
+
+            if (ingredient && ingredient.trim() !== "") {
+                ingredients += `<li>${ingredient} - ${measure}</li>`
+            }
         }
-    }
-    
-
   wrapper.innerHTML += 
     `<h3 class="recipe__title">${meal.strMeal}</h3>
         <h5 class="recipe__origin">${meal.strArea}</h5>
         <ul class="ingredients">${ingredients}</ul>
-        <p class="recipe__instr">${meal.strInstructions}</p>
-        <figure class="meal__img-wrapper">
+        <p class="recipe__instructions">${meal.strInstructions}</p>
+        <figure class="meal__img--wrapper">
             <img src=${meal.strMealThumb} class="meal__img">
         </figure>
     `
 })
-
 }
 
+document.getElementById("prevBtn").addEventListener("click", () => {
+    if (currentPage > 1) {
+        currentPage--
+        renderPage()
+    }
+})
 
+document.getElementById("nextBtn").addEventListener("click", () => {
+    currentPage++
+    renderPage()
+})
+
+renderPage()
+}
 
 main()
