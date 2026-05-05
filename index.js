@@ -16,7 +16,14 @@ const meal = data.meals[0]
 
 
 const wrapper = document.querySelector(".recipe__wrapper")
-data.meals.forEach(meal => {
+
+const pageSize = 5
+let currentPage = 1
+const start = (currentPage - 1) * pageSize
+const end = start + pageSize
+const paginatedData = data.meals.slice(start, end)
+
+paginatedData.forEach(meal => {
     let ingredients = ""
 
     for (let i = 1; i <= 20; i++) {
@@ -39,11 +46,6 @@ data.meals.forEach(meal => {
         </figure>
     `
 })
-
-const pageSize = 5
-const start = (currentPage - 1) * pageSize
-const end = start + pageSize
-const paginatedData = data.slice(start, end)
 
 }
 
