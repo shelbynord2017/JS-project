@@ -1,8 +1,10 @@
 // API: https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 // API key: 1
 
-async function main() {
-const res = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=chicken")
+let meals = []
+
+async function fetchMeals() {
+const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
 const data = await res.json()
 
 
@@ -60,5 +62,16 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
 renderPage()
 }
+
+const form = document.querySelector(".search__form")
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    const searchValue = document.querySelector(".search__bar").value 
+    
+
+    fetchMeals(searchValue)
+})
 
 main()

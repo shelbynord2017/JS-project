@@ -97,11 +97,11 @@ nav {
 .btn__search {
     background-color: rgb(102, 145, 102);
     width: 75px;
-    padding: 7px 10px;
+    padding: 6px 10px;
     border-radius: 50px;
     border: none;
     position: absolute;
-    top: 23px;
+    top: 22px;
     left: 232px;
     cursor: pointer;
 }
