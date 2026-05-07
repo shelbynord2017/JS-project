@@ -1,13 +1,13 @@
 // API: https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 // API key: 1
 
-let meals = []
 
-async function fetchMeals() {
+async function fetchMeals(searchTerm) {
 const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
 const data = await res.json()
 
-
+let meals = []
+meals = data.meals
 
 const wrapper = document.querySelector(".recipe__wrapper")
 const pageSize = 5
@@ -18,7 +18,7 @@ function renderPage() {
     wrapper.innerHTML = ""
     const start = (currentPage - 1) * pageSize
     const end = start + pageSize
-    const paginatedData = data.meals.slice(start, end)
+    const paginatedData = meals.slice(start, end)
 
 
     paginatedData.forEach(meal => {
@@ -74,4 +74,4 @@ form.addEventListener("submit", (event) => {
     fetchMeals(searchValue)
 })
 
-main()
+fetchMeals('chicken')
