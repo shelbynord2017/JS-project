@@ -6,6 +6,8 @@ async function fetchMeals(searchTerm) {
 const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
 const data = await res.json()
 
+
+
 let meals = []
 meals = data.meals
 
@@ -46,6 +48,27 @@ function renderPage() {
     </div>
     `
 })
+}
+
+function filterRecipes(filter) {
+  if (filter === 'A_TO_Z') {
+    console.log(filter)
+    const filterRecipes = meals.sort()
+    console.log(filteredRecipes)
+  } 
+  else if (filter === 'Z_TO_A') {
+    const filterRecipes = meals.sort().reverse()
+    console.log(filteredRecipes)
+  } 
+  else if (filter === 'MOST INGREDIENTS__TO__LEAST INGREDIENTS') {
+    const filteredRecipes = ingredients.sort((a, b) => {b.amount - a.amount})
+    console.log(filterRecipes)
+  }
+  else if (filter === 'LEAST INGREDIENTS__TO__MOST INGREDIENTS') {
+    const filteredRecipes = ingredients.sort((a, b) => {a.amount - b.amount})
+    console.log(filterRecipes)
+  }
+
 }
 
 document.getElementById("prevBtn").addEventListener("click", () => {

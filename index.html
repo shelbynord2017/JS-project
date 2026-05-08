@@ -10,10 +10,20 @@
     <title>Document</title>
 </head>
 <body>
+  <div class="forms">  
     <form class="search__form">
       <input type="search" class="search__bar" name="q" placeholder="Search..." aria-label="Search through the site content">
       <button type="submit" class="btn__search">Search</button>
     </form>
+    <select id="filter" onchange="filterRecipes(event)">
+        <option value="" disabled selected>Sort</option>
+        <option value="A__TO__Z">A to Z</option>
+        <option value="Z__TO__A">Z to A</option>
+        <option value="MOST INGREDIENTS__TO__LEAST INGREDIENTS">Most Ingredients to Least Ingredients</option>
+        <option value="LEAST INGREDIENTS__TO__MOST INGREDIENTS">Least Ingredients to Most Ingredients</option>
+    </select>
+  </div>
+
     <h1 class="title">Recipes</h1>
     <div class="recipe__wrapper">
       <ul class="ingredients"></ul>
