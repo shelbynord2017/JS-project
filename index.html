@@ -15,12 +15,11 @@
       <input type="search" class="search__bar" name="q" placeholder="Search..." aria-label="Search through the site content">
       <button type="submit" class="btn__search">Search</button>
     </form>
-    <select id="filter" onchange="filterRecipes(event)">
-        <option value="" disabled selected>Sort</option>
-        <option value="A__TO__Z">A to Z</option>
-        <option value="Z__TO__A">Z to A</option>
-        <option value="MOST INGREDIENTS__TO__LEAST INGREDIENTS">Most Ingredients to Least Ingredients</option>
-        <option value="LEAST INGREDIENTS__TO__MOST INGREDIENTS">Least Ingredients to Most Ingredients</option>
+    <select id="filter" onchange="filterRecipes">
+      <option value="A__TO__Z">A-Z</option>
+      <option value="Z__TO__A">Z-A</option>
+      <option value="MOST INGREDIENTS__TO__LEAST INGREDIENTS">Most Ingredients to Least Ingredients</option>
+      <option value="LEAST INGREDIENTS__TO__MOST INGREDIENTS">Least Ingredients to Most Ingredients</option>
     </select>
   </div>
 

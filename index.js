@@ -50,15 +50,13 @@ function renderPage() {
 })
 }
 
-function filterRecipes(filter) {
+function filterRecipes(event) {
+    const filter = event.target.value
   if (filter === 'A_TO_Z') {
-    console.log(filter)
-    const filterRecipes = meals.sort()
-    console.log(filteredRecipes)
+    recipes.sort((a, b) => a.title.localeCompare(b.title))
   } 
   else if (filter === 'Z_TO_A') {
-    const filterRecipes = meals.sort().reverse()
-    console.log(filteredRecipes)
+    recipes.sort((a, b) => a.title.localeCompare(b.title))
   } 
   else if (filter === 'MOST INGREDIENTS__TO__LEAST INGREDIENTS') {
     const filteredRecipes = ingredients.sort((a, b) => {b.amount - a.amount})
