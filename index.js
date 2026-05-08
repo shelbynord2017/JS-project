@@ -52,19 +52,17 @@ function renderPage() {
 
 function filterRecipes(event) {
     const filter = event.target.value
-  if (filter === 'A_TO_Z') {
+  if (filter === 'A__TO__Z') {
     recipes.sort((a, b) => a.title.localeCompare(b.title))
   } 
-  else if (filter === 'Z_TO_A') {
+  else if (filter === 'Z__TO__A') {
     recipes.sort((a, b) => a.title.localeCompare(b.title))
   } 
   else if (filter === 'MOST INGREDIENTS__TO__LEAST INGREDIENTS') {
-    const filteredRecipes = ingredients.sort((a, b) => {b.amount - a.amount})
-    console.log(filterRecipes)
+    recipes.sort((a, b) => {b.amount - a.amount})
   }
   else if (filter === 'LEAST INGREDIENTS__TO__MOST INGREDIENTS') {
-    const filteredRecipes = ingredients.sort((a, b) => {a.amount - b.amount})
-    console.log(filterRecipes)
+    recipes.sort((a, b) => {a.amount - b.amount})
   }
 
 }
