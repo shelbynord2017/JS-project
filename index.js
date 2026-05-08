@@ -1,14 +1,14 @@
 // API: https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 // API key: 1
+console.log('js is connected')
 
+let meals = []
 
 async function fetchMeals(searchTerm) {
 const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`)
 const data = await res.json()
 
 
-
-let meals = []
 meals = data.meals
 
 const wrapper = document.querySelector(".recipe__wrapper")
@@ -50,22 +50,7 @@ function renderPage() {
 })
 }
 
-function filterRecipes(event) {
-    const filter = event.target.value
-  if (filter === 'A__TO__Z') {
-    recipes.sort((a, b) => a.title.localeCompare(b.title))
-  } 
-  else if (filter === 'Z__TO__A') {
-    recipes.sort((a, b) => a.title.localeCompare(b.title))
-  } 
-  else if (filter === 'MOST INGREDIENTS__TO__LEAST INGREDIENTS') {
-    recipes.sort((a, b) => {b.amount - a.amount})
-  }
-  else if (filter === 'LEAST INGREDIENTS__TO__MOST INGREDIENTS') {
-    recipes.sort((a, b) => {a.amount - b.amount})
-  }
 
-}
 
 document.getElementById("prevBtn").addEventListener("click", () => {
     if (currentPage > 1) {
@@ -92,5 +77,24 @@ form.addEventListener("submit", (event) => {
 
     fetchMeals(searchValue)
 })
+
+function filterRecipes(event) {
+    console.log('filterRecipes is running')
+    const filter = event.target.value
+    console.log(filter)
+  if (filter === 'A__TO__Z') {
+    meals.sort((a, b) => a.strMeal.localeCompare(b.strMeal))
+  } 
+  else if (filter === 'Z__TO__A') {
+    meals.sort((a, b) => a.strMeal.localeCompare(b.strMeal))
+  } 
+  else if (filter === 'MOST INGREDIENTS__TO__LEAST INGREDIENTS') {
+    meals.sort((a, b) => {b.amount - a.amount})
+  }
+  else if (filter === 'LEAST INGREDIENTS__TO__MOST INGREDIENTS') {
+    meals.sort((a, b) => {a.amount - b.amount})
+  }
+
+}
 
 fetchMeals('chicken')
