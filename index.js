@@ -11,9 +11,11 @@ const data = await res.json()
 
 meals = data.meals
 
+}
+
 const wrapper = document.querySelector(".recipe__wrapper")
 
-}
+
 
 function renderPage() {
     window.scrollTo(0, 0)
