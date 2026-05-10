@@ -10,6 +10,7 @@ const data = await res.json()
 
 
 meals = data.meals
+renderPage()
 
 }
 
@@ -82,6 +83,17 @@ form.addEventListener("submit", (event) => {
     fetchMeals(searchValue)
 })
 
+function countIngredients(meal) {
+    let count = 0
+
+    for (let i = 1; i <= 20; i++) {
+        if (meal[`strIngredient${i}`] && meal[`strIngredient${i}`].trim !== "") {
+            count++
+        }
+    }
+    return count
+}
+
 function filterRecipes(event) {
     console.log('filterRecipes is running')
     const filter = event.target.value
@@ -93,11 +105,13 @@ function filterRecipes(event) {
     meals.sort((a, b) => b.strMeal.localeCompare(a.strMeal))
   } 
   else if (filter === 'MOST INGREDIENTS__TO__LEAST INGREDIENTS') {
-    meals.sort((a, b) => {b.amount - a.amount})
+    meals.sort((a, b) => countIngredients(b)- countIngredients(a))
   }
   else if (filter === 'LEAST INGREDIENTS__TO__MOST INGREDIENTS') {
-    meals.sort((a, b) => {a.amount - b.amount})
+    meals.sort((a, b) => countIngredients(a) - countIngredients(b))
   }
+
+  renderPage()
 
 }
 
