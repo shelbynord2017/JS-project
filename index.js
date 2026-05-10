@@ -12,8 +12,8 @@ const data = await res.json()
 meals = data.meals
 
 const wrapper = document.querySelector(".recipe__wrapper")
-const pageSize = 5
-let currentPage = 1
+
+}
 
 function renderPage() {
     window.scrollTo(0, 0)
@@ -52,6 +52,9 @@ function renderPage() {
 
 
 
+const pageSize = 5
+let currentPage = 1
+
 document.getElementById("prevBtn").addEventListener("click", () => {
     if (currentPage > 1) {
         currentPage--
@@ -65,7 +68,6 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 })
 
 renderPage()
-}
 
 const form = document.querySelector(".search__form")
 
@@ -86,7 +88,7 @@ function filterRecipes(event) {
     meals.sort((a, b) => a.strMeal.localeCompare(b.strMeal))
   } 
   else if (filter === 'Z__TO__A') {
-    meals.sort((a, b) => a.strMeal.localeCompare(b.strMeal))
+    meals.sort((a, b) => b.strMeal.localeCompare(a.strMeal))
   } 
   else if (filter === 'MOST INGREDIENTS__TO__LEAST INGREDIENTS') {
     meals.sort((a, b) => {b.amount - a.amount})
