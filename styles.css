@@ -114,12 +114,27 @@ nav {
     background-color: rgb(102, 145, 102);
 }
 
+/* NAV */
+
+.nav__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.nav__links {
+    display: flex;
+    justify-content: ;
+
+}
 
 /* SORTING */
 
 .forms {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 #filter {
