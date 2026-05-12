@@ -294,23 +294,16 @@ nav,
 @media(max-width: 768px) {
 
 .btn__search {
-    background-color: rgb(88, 128, 88);
-    font-size: 14px;
-    width: 75px;
-    padding: 8px 10px;
-    border-radius: 50px;
-    border: none;
-    position: absolute;
-    top: 65%;
-    right:     
-    cursor: pointer;
-    transition: all 300ms ease;
+    top: 50%;
+    right: 16%;
+    left: auto;
     transform: translate(50%, -50%);
 }
 
 .search__bar {
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
 }
 
 .forms {
@@ -324,4 +317,34 @@ nav,
     margin-right: 0;
 }
 
+.recipe__instructions {
+    width: 100%;
+    max-width: 680px;
+}
+
+.meal__img--wrapper {
+    max-width: 90%;
+}
+
+.meal__img {
+    width: 100%;
+    max-width: 85%;
+}
+
+}
+
+
+
+@media(max-width: 550px) {
+    .recipe__instructions {
+        max-width: 480px;
+    }
+
+    .nav__link {
+        font-size: 16px;
+    }
+
+    .nav__links {
+        gap: 5px;
+    }
 }
