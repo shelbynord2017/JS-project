@@ -16,15 +16,19 @@ body {
   overflow-x: hidden;
 }
 
-nav {
-  height: 80px;
+nav, 
+.nav__container,
+.nav__row {
+    width: 100%;
+  height: 100px;
   display: flex;
+  margin-bottom: 20px;
 }
 
 .title {
     text-align: center;
     font-size: 50px;
-    margin-top: 100px;
+    margin-top: 50px;
     color: rgb(32, 65, 32)
 }
 
@@ -73,6 +77,48 @@ nav {
     scale: 1.05;
 }
 
+/* NAV */
+
+.nav__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(190, 122, 50, 0.897);
+}
+
+.logo__wrapper {
+    margin-left: 24px;
+}
+
+.nav__logo--img {
+    background-color: 
+}
+
+.nav__links {
+    display: flex;
+    margin-right: 24px;
+    gap: 2em;
+}
+
+.nav__link {
+    display: flex;
+    text-decoration: none;
+    color: #242424;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 8px;
+    transition: text-decoration 300ms ease;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+
 /* SEARCH BAR */
 
 .search__bar {
@@ -84,8 +130,11 @@ nav {
     width: 270px;
     margin-top: 20px;
     margin-left: 40px;
-    position: relative;
     transition: all 300ms ease;
+}
+
+.search__form {
+    position: relative; 
 }
 
 .search__bar:hover {
@@ -112,22 +161,6 @@ nav {
 
 .btn__search:hover {
     background-color: rgb(102, 145, 102);
-}
-
-/* NAV */
-
-.nav__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-}
-
-.nav__links {
-    display: flex;
-    justify-content: ;
-
 }
 
 /* SORTING */
@@ -168,7 +201,7 @@ nav {
     text-align: center;
     font-size: 24px;
     font-weight: 700;
-    margin-top: 150px;
+    margin-top: 100px;
     color: rgb(47, 96, 47);
 }
 
@@ -221,3 +254,39 @@ nav {
     max-width: 600px;
 }
 
+/* FOOTER */
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 75px;
+    padding-top: 75px;
+    background-color: rgba(190, 122, 50, 0.897);
+}
+
+.footer__text {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer__links {
+    display: flex;
+    gap: 2em;
+}
+
+.footer__link {
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 8px;
+        transition: text-decoration 300ms ease;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
